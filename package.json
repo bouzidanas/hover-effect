@@ -1,26 +1,33 @@
 {
   "name": "hover-effect",
-  "version": "1.2.0",
-  "source": "src/hover-effect.js",
-  "module": "dist/hover-effect.es.js",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "main": "dist/hover-effect.js",
-  "umd:main": "dist/hover-effect.umd.js",
-  "devDependencies": {
-    "microbundle": "^0.15.1",
-    "prettier": "^2.8.4",
-    "uglify-es": "^3.3.9"
+  "module": "dist/hover-effect.esm.js",
+  "exports": {
+    ".": {
+      "require": "./dist/hover-effect.js",
+      "import": "./dist/hover-effect.esm.js",
+      "types": "./dist/hover-effect.d.ts"
+    }
   },
   "scripts": {
-    "build": "microbundle build --globals three=THREE,gsap=gsap",
-    "watch": "microbundle watch --globals three=THREE,gsap=gsap",
-    "publish": "npm publish --access public",
-    "minify": "uglifyjs --mangle --compress -- js/hover.js > js/hover.min.js",
-    "prettify": "prettier --trailing-comma=es5 --single-quote --print-width=120 --write ./js/hover.js"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0",
+    "vite-plugin-dts": "^3.7.2"
   },
   "files": [
     "dist"
   ],
   "dependencies": {
+    "@types/three": "^0.161.2",
     "gsap": "^3.11.4",
     "three": "^0.149.0"
   }
