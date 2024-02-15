@@ -1,6 +1,6 @@
 # Hover effect
 
-Javascript library to draw and animate images on hover.
+This is a fork of **hover-effect** which is a Javascript library to draw and animate images on hover.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ZGDNS5D28SFWQ)
 
@@ -8,60 +8,49 @@ Javascript library to draw and animate images on hover.
 
 [**ARTICLE**](https://tympanus.net/codrops/2018/04/10/webgl-distortion-hover-effects/)
 
+For now, this fork attempts to accomplish the following:
+- [x] Convert Javascript to Typescript
+- [x] Convert the main function to a class with a constructor
+- [x] Add a method to destroy the effect
+
 ## Example
 <p align="center">
     <img alt="example 1" src="https://github.com/robin-dela/hover-effect/blob/master/gifs/1.gif?raw=true" width="256">
     <img alt="example 2" src="https://github.com/robin-dela/hover-effect/blob/master/gifs/2.gif?raw=true" width="256">
 </p>
 
-## Use locally
-To load the images you'll need to view the demo via a web server, simply go to the demo's folder location and type `python -m SimpleHTTPServer 8000` in your terminal. Then access the demo in your browser by typing: `localhost:8000`
+## usage
 
-## Basic usage
-
-This helper needs [Three.js](https://threejs.org) and [gsap](https://greensock.com/) to do the transition, so you need to include it before this little helper.
-
-Then you only need a `div` element in HTML to start animating things with a piece of code like this:
-
-```html
-<!-- Div to draw the effect -->
-<div class="my-div"></div>
-
-<!-- library needed -->
-<script src="three.min.js"></script>
-<script src="gsap.min.js"></script>
-
-<script src="dist/hover.umd.js"></script>
-<script>
-    var myAnimation = new hoverEffect({
-        parent: document.querySelector('.my-div'),
-        intensity: 0.3,
-        image1: 'images/myImage1.jpg',
-        image2: 'images/myImage2.jpg',
-        displacementImage: 'images/myDistorsionImage.png'
-    });
-</script>
-```
-
-## Node JS usage
-
-This helper can also be used in node js environments. Three.js and TweenMax scripts are included as dependencies in the package so you don't need to manually include them.
+ Three.js (plus types) and TweenMax scripts are included as dependencies in the package so you don't need to manually include them.
 
 ### Install
 
 ```
-npm install hover-effect
+npm install bouzidanas/hover-effect
 ```
 
 ### Import
 
 ```js
-import hoverEffect from 'hover-effect'
+import HoverEffect from 'hover-effect'
 ```
 
 ### Init
 
-Initialize just as you would in the basic usage example above.
+```ts
+import HoverEffect from 'hover-effect';
+
+const hoverEffect = new HoverEffect({
+      parent: document.getElementById("hover-effect-container"),  // the parent DOM element of the hover effect
+      displacementImage: "/heightMap.png",
+      image1: "/first-image.jpg",
+      image2: "/second-image.jpg",
+      // optional options here ...
+    });
+
+hoverEffect.next();
+hoverEffect.previous();
+```
 
 ## Options
 
