@@ -2,16 +2,16 @@
 
 This is a fork of **hover-effect** which is a Javascript library to draw and animate images on hover.
 
+For now, this fork attempts to accomplish the following:
+- [x] Convert Javascript to Typescript
+- [x] Convert the main function to a class with a constructor
+- [x] Add a method to destroy the effect
+
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ZGDNS5D28SFWQ)
 
 [**DEMO**](https://tympanus.net/Development/DistortionHoverEffect/)
 
 [**ARTICLE**](https://tympanus.net/codrops/2018/04/10/webgl-distortion-hover-effects/)
-
-For now, this fork attempts to accomplish the following:
-- [x] Convert Javascript to Typescript
-- [x] Convert the main function to a class with a constructor
-- [x] Add a method to destroy the effect
 
 ## Example
 <p align="center">
