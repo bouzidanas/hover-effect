@@ -1,15 +1,14 @@
 {
   "name": "hover-effect",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "main": "dist/hover-effect.umd.js",
   "module": "dist/hover-effect.es.js",
   "exports": {
     ".": {
-      "require": "./dist/hover-effect.umd.js",
+      "types": "./dist/hover-effect.d.ts",
       "import": "./dist/hover-effect.es.js",
-      "types": "./dist/hover-effect.d.ts"
+      "require": "./dist/hover-effect.umd.js"
     }
   },
   "scripts": {
