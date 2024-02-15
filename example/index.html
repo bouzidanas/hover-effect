@@ -326,7 +326,7 @@
 
 			Array.from(document.querySelectorAll('.grid__item-img')).forEach((el) => {
 				const imgs = Array.from(el.querySelectorAll('img'));
-				new hoverEffect({
+				new HoverEffect({
 					parent: el,
 					intensity: el.dataset.intensity || undefined,
 					speedIn: el.dataset.speedin || undefined,

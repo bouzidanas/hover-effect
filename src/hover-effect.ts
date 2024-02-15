@@ -325,6 +325,7 @@ void main() {
     
             // Remove references to the variables
             renderer.dispose();
+
         }
 
         this.next = transitionIn;

@@ -50,6 +50,7 @@ const hoverEffect = new HoverEffect({
 
 hoverEffect.next();
 hoverEffect.previous();
+hoverEffect.destroy();
 ```
 
 ## Options
@@ -86,6 +87,44 @@ hoverEffect.previous();
 |-------------------------|-------------------------|
 |`next`                   | Transition to the second image. |
 |`previous`               | Transition to the first image. |
+|`destroy`                | Destroy the effect. |
+
+## Type declaration for original library
+
+If you want to still use the original library, the following type declaration can be used:
+
+```ts
+declare module "hover-effect" { 
+    export interface Options {
+        parent: HTMLElement;
+        displacementImage: string;
+        image1: string;
+        image2: string;
+        imagesRatio?: number;
+        intensity?: number;
+        intensity1?: number;
+        intensity2?: number;
+        angle?: number;
+        angle1?: number;
+        angle2?: number;
+        speed?: number;
+        speedIn?: number;
+        speedOut?: number;
+        hover?: boolean;
+        easing?: string;
+        video?: boolean;
+    }
+
+    declare class hoverEffect {
+        constructor(opts: Options);
+
+        next: () => void;
+        previous: () => void;
+    }
+
+    export default hoverEffect;
+}
+```
 
 ## Credits
 Thanks to :
