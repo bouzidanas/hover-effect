@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "dist/hover-effect.js",
-  "module": "dist/hover-effect.esm.js",
+  "main": "dist/hover-effect.umd.js",
+  "module": "dist/hover-effect.es.js",
   "exports": {
     ".": {
-      "require": "./dist/hover-effect.js",
-      "import": "./dist/hover-effect.esm.js",
+      "require": "./dist/hover-effect.umd.js",
+      "import": "./dist/hover-effect.es.js",
       "types": "./dist/hover-effect.d.ts"
     }
   },
