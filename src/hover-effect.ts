@@ -296,13 +296,47 @@ void main() {
             render();
         });
 
+        function destroy() {
+            // Remove event listeners
+            if (userHover) {
+                parent.removeEventListener("mouseenter", transitionIn);
+                parent.removeEventListener("touchstart", transitionIn);
+                parent.removeEventListener("mouseleave", transitionOut);
+                parent.removeEventListener("touchend", transitionOut);
+            }
+    
+            // Remove the renderer's DOM element
+            parent.removeChild(renderer.domElement);
+    
+            // Dispose textures
+            texture1.dispose();
+            texture2.dispose();
+            disp.dispose();
+    
+            // Dispose material
+            mat.dispose();
+    
+            // Dispose geometry
+            geometry.dispose();
+    
+            // Remove the object from the scene
+            scene.remove(object);
+            scene.remove.apply(scene, scene.children);
+    
+            // Remove references to the variables
+            renderer.dispose();
+        }
+
         this.next = transitionIn;
         this.previous = transitionOut;
+        this.destroy = destroy;
     }
 
     next!: () => void;
     previous!: () => void;
+    destroy!: () => void;
 
+    
 }
 
 export default HoverEffect;
